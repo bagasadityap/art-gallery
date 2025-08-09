@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sora: 'Sora', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-frijole: 'Frijole', cursive;
+  --font-comic: 'Comic Neue', cursive;
+  --font-caveat: 'Caveat', cursive;
+  --font-permanent-marker: 'Permanent Marker', cursive;
+  --font-gloria: 'Gloria Hallelujah', cursive;
+  --font-andika: 'Andika', sans-serif;
+  --font-bodoni: 'Bodoni Moda', cursive;
+  --font-old: 'Old Standart TT', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-sora {
+  font-family: var(--font-sora);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-frijole {
+  font-family: var(--font-frijole);
+}
+
+.font-comic {
+  font-family: var(--font-comic);
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+.font-permanent {
+  font-family: var(--font-permanent-marker);
+}
+
+.font-gloria {
+  font-family: var(--font-gloria);
+}
+
+.font-andika {
+  font-family: var(--font-andika);
+}
+
+.font-bodoni {
+  font-family: var(--font-bodoni);
+}
+
+.font-old {
+  font-family: var(--font-old);
+}
