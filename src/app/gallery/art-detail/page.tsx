@@ -6,10 +6,18 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import Footer from "../../../../components/footer";
 import Share from "../../../../components/share";
+import { useEffect, useState } from "react";
 
 export default function Detail() {
     const router = useRouter();
-    const url = window.location.href;
+    const [url, setUrl] = useState("");
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+        setUrl(window.location.href);
+        }
+    }, []);
+    
     const title = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, eligendi.";
 
     const images = [
