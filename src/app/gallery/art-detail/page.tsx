@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import Footer from "../../../../components/footer";
 import Share from "../../../../components/share";
 
-export default function detail() {
+export default function Detail() {
     const router = useRouter();
     const url = window.location.href;
     const title = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, eligendi.";
