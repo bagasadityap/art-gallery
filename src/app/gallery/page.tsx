@@ -6,7 +6,6 @@ import { FaPalette, FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Navbar from "../../../components/navbar";
 import Footer from "../../../components/footer";
-import Image from "next/image";
 
 export default function ArtGallery() {
   const router = useRouter();
@@ -51,12 +50,11 @@ export default function ArtGallery() {
         <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
           {images.map((image, index) => (
             <div key={index} className="break-inside-avoid bg-black/80 shadow-sm hover:scale-102 transition rounded-2xl">
-                <Image
-                    fill
+                <img
                     src={image}
                     alt={`phaser-beary-meme-${index}`}
                     className="w-full h-auto object-contain"
-                    loading="eager"
+                    loading="lazy"
                     onClick={() => router.push(`/gallery/art-detail/`)}
                 />
                 <div className="px-4 pt-1 pb-3 text-white text-[10px] md:text-xs">
