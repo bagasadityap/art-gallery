@@ -12,14 +12,13 @@
   --foreground: #171717;
   --font-sora: 'Sora', sans-serif;
   --font-inter: 'Inter', sans-serif;
-  --font-frijole: 'Frijole', cursive;
   --font-comic: 'Comic Neue', cursive;
   --font-caveat: 'Caveat', cursive;
   --font-permanent-marker: 'Permanent Marker', cursive;
   --font-gloria: 'Gloria Hallelujah', cursive;
   --font-andika: 'Andika', sans-serif;
   --font-bodoni: 'Bodoni Moda', cursive;
-  --font-old: 'Old Standart TT', sans-serif;
+  --font-old: 'Old Standard TT', sans-serif;
 }
 
 @theme inline {
@@ -48,10 +47,6 @@ body {
 
 .font-inter {
   font-family: var(--font-inter);
-}
-
-.font-frijole {
-  font-family: var(--font-frijole);
 }
 
 .font-comic {
