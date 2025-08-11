@@ -51,7 +51,7 @@ export default function Home() {
             <Image
               width={100}
               height={100}
-              src="/assets/beary/main.PNG" alt=""
+              src="/assets/beary/main.webp" alt=""
               className="h-full w-auto object-cover"
             />
           </RevealOnScroll>
@@ -87,7 +87,7 @@ export default function Home() {
             <Image
               width={100}
               height={100}
-              src="/assets/beary/bg-about.PNG"
+              src="/assets/beary/bg-about.webp"
               alt=""
               className="w-full h-auto object-cover" />
           </RevealOnScroll>
@@ -127,21 +127,23 @@ export default function Home() {
       <RevealOnScroll>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-10 py-10">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">Top Artists</h1>
-          <div className="flex flex-row items-center justify-center gap-2 md:gap-10 grayscale">
+          <div className="flex flex-row items-center justify-center gap-2 md:gap-10"
+            style={{filter: "sepia(90%)"}}
+          >
             <RevealOnScroll direction="up" delay={150}>
-              <img src="/assets/beary/1.webp" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full" alt="" />
+              <img src="/assets/beary/1.PNG" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full border border-1 border-yellow-900" alt="" />
+            </RevealOnScroll>
+            <RevealOnScroll direction="up" delay={100}>
+              <img src="/assets/beary/1.PNG" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full border border-1 border-yellow-900" alt="" />
+            </RevealOnScroll>
+            <RevealOnScroll direction="up" delay={50}>
+              <img src="/assets/beary/1.PNG" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full border border-1 border-yellow-900" alt="" />
+            </RevealOnScroll>
+            <RevealOnScroll direction="up" delay={100}>
+              <img src="/assets/beary/1.PNG" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full border border-1 border-yellow-900" alt="" />
             </RevealOnScroll>
             <RevealOnScroll direction="up" delay={150}>
-              <img src="/assets/beary/1.webp" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full" alt="" />
-            </RevealOnScroll>
-            <RevealOnScroll direction="up" delay={150}>
-              <img src="/assets/beary/1.webp" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full" alt="" />
-            </RevealOnScroll>
-            <RevealOnScroll direction="up" delay={150}>
-              <img src="/assets/beary/1.webp" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full" alt="" />
-            </RevealOnScroll>
-            <RevealOnScroll direction="up" delay={150}>
-              <img src="/assets/beary/1.webp" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full" alt="" />
+              <img src="/assets/beary/1.PNG" className="w-12 h-12 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full border border-1 border-yellow-900" alt="" />
             </RevealOnScroll>
           </div>
         </div>
@@ -164,7 +166,7 @@ export default function Home() {
                         alt={`phaser-beary-meme-${index}`}
                         className="w-full h-auto object-contain"
                         loading="eager"
-                        onClick={() => router.push(`/art-gallery/detail/`)}
+                        onClick={() => router.push(`/gallery/art-detail`)}
                     />
                   </RevealOnScroll>
               </div>

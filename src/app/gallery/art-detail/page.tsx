@@ -53,8 +53,8 @@ export default function Detail() {
                 </div>
             </div>
             <div className="mb-5">
-                <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-5 md:gap-10 px-0 md:px-30 mt-10">
-                    <h1 className="font-bodoni w-full text-center text-xl md:text:2xl lg:text-3xl font-bold ">Artist</h1>
+                <h1 className="font-bodoni w-full text-center text-xl md:text:2xl lg:text-3xl font-bold mt-10 mb-10">Artist</h1>
+                <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-5 md:gap-10 px-0 md:px-30">
                     <div className="min-w-30 w-30 max-w-40">
                         <img src="/assets/beary/1.webp" alt="" className="object-cover rounded-full shadow-lg"/>
                     </div>
