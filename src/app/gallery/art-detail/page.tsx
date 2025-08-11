@@ -36,8 +36,25 @@ export default function Detail() {
                     {'<'} Back
                 </Link>
             </div>
+            <div className="w-full mt-5 px-0 md:px-30 flex flex-col justify-between gap-5">
+                <div className="w-full flex items-center justify-center">
+                    <img src="/assets/beary/art/1.jpeg" alt="" className="hover:scale-101 transition"/>
+                </div>
+                <div className="w-full text-black">
+                    <h1 className="font-bodoni text-xl md:text:2xl lg:text-3xl font-bold">{title}</h1>
+                    <p className="text-gray-600 text-sm md:text-md flex items-center gap-1 md:gap-2 mt-2 md:mt-1">
+                        <Clock className="w-4 h-4 md:w-5 md:h-5" />
+                        Submited on January 10, 2025
+                    </p>
+                    {/* <Share url={url} title={title} /> */}
+                    <p className="text-justify mt-3 text-gray-800">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea asperiores aliquid, mollitia facilis sapiente, non atque provident itaque officiis nam laborum at, eligendi voluptatum natus odit doloremque molestias quaerat. Soluta veniam minima provident magnam quis molestias voluptatum fugit aut. Magnam, neque animi repudiandae, esse eaque nulla id, excepturi exercitationem iure dolore asperiores deleniti nesciunt minus. Voluptates quidem minima pariatur laborum totam quaerat saepe, repellat eveniet reiciendis hic perferendis consequuntur delectus temporibus aperiam eaque minus ut porro debitis ad ipsum? Consequuntur.
+                    </p>
+                </div>
+            </div>
             <div className="mb-5">
                 <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-5 md:gap-10 px-0 md:px-30 mt-10">
+                    <h1 className="font-bodoni w-full text-center text-xl md:text:2xl lg:text-3xl font-bold ">Artist</h1>
                     <div className="min-w-30 w-30 max-w-40">
                         <img src="/assets/beary/1.webp" alt="" className="object-cover rounded-full shadow-lg"/>
                     </div>
@@ -51,26 +68,10 @@ export default function Detail() {
                             <FaInstagram className="h3 w3 md:h-5 md:w-5 text-red-400" aria-hidden="true" />
                             @phaser_art
                         </a>
-                        <p className="text-justify text-gray-700 mt-2">
+                        {/* <p className="text-justify text-gray-700 mt-2">
                             The laziest bear to ever accidentally mint himself into the XRP blockchain. He’s not your average pixel-pumped NFT character. Nope. He’s unbothered, unimpressed, and perpetually halfway between a nap and existential dread.
-                        </p>
+                        </p> */}
                     </div>
-                </div>
-            </div>
-            <div className="w-full mt-5 px-0 md:px-30 flex flex-col justify-between gap-5">
-                <div className="w-full flex items-center justify-center">
-                    <img src="/assets/beary/art/1.jpeg" alt="" className="hover:scale-101 transition"/>
-                </div>
-                <div className="w-full text-black">
-                    <h1 className="font-bodoni text-xl md:text:2xl lg:text-3xl font-bold">{title}</h1>
-                    <p className="text-gray-600 flex items-center gap-2 mt-1">
-                        <Clock className="w-5 h-5" />
-                        Submited on January 10, 2025
-                    </p>
-                    <Share url={url} title={title} />
-                    <p className="text-justify mt-3 text-gray-800">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea asperiores aliquid, mollitia facilis sapiente, non atque provident itaque officiis nam laborum at, eligendi voluptatum natus odit doloremque molestias quaerat. Soluta veniam minima provident magnam quis molestias voluptatum fugit aut. Magnam, neque animi repudiandae, esse eaque nulla id, excepturi exercitationem iure dolore asperiores deleniti nesciunt minus. Voluptates quidem minima pariatur laborum totam quaerat saepe, repellat eveniet reiciendis hic perferendis consequuntur delectus temporibus aperiam eaque minus ut porro debitis ad ipsum? Consequuntur.
-                    </p>
                 </div>
             </div>
             {/* <div className="flex flex-col md:flex-row justify-between gap-5">

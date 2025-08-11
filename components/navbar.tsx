@@ -12,15 +12,15 @@ export default function Navbar() {
     <nav className="fixed text-black top-0 left-0 w-screen md:w-full bg-white shadow-md z-50">
       <div className="w-screen md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-15 md:h-25">
-          <div className="font-bodoni text-xl md:text-3xl font-bold text-yellow-800">
+          <div className="font-bodoni text-xl md:text-2xl lg:text-3xl font-bold text-yellow-800">
             $Phaser Art Gallery
           </div>
 
-          <div className="hidden md:flex gap-10 text-2xl font-semibold items-center">
+          <div className="hidden md:flex gap-5 md:gap-7 lg:gap-10 text-xl lg:text-2xl font-semibold items-center">
             <Link href="/" className="hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="hover:text-yellow-700 transition">About</Link>
             <Link href="/gallery" className="hover:text-yellow-700 transition">Gallery</Link>
-            <Link href="#faq" className="hover:text-yellow-700 transition">FAQ</Link>
+            <Link href="/faq" className="hover:text-yellow-700 transition">FAQ</Link>
             <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition">
               Login
             </button>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link href="/" className="block hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="block hover:text-yellow-700 transition">About</Link>
             <Link href="/gallery" className="block hover:text-yellow-700 transition">Gallery</Link>
-            <Link href="#faq" className="block hover:text-yellow-700 transition">FAQ</Link>
+            <Link href="/faq" className="block hover:text-yellow-700 transition">FAQ</Link>
             <button className="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-yellow-700 transition">
               Login
             </button>
