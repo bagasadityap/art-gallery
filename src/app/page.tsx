@@ -51,7 +51,7 @@ export default function Home() {
             <Image
               width={100}
               height={100}
-              src="/assets/beary/head.PNG" alt=""
+              src="/assets/beary/main.PNG" alt=""
               className="h-full w-auto object-cover"
             />
           </RevealOnScroll>
@@ -77,7 +77,7 @@ export default function Home() {
             <p className="font-sora text-black text-sm md:text-lg lg:text-2xl text-justify">
               Phaser Beary Art Gallery is a dedicated platform we created to showcase and support artists who operate within the XRPL blockchain ecosystem. Our mission is to foster a vibrant and collaborative art community by providing a welcoming environment where creativity thrives. We are committed to fully supporting XRPL-based artists by offering resources, exposure, and opportunities to connect with collectors and enthusiasts alike. Through this gallery, we aim to bridge the gap between digital art and blockchain technology, empowering artists to share their unique creations in a trusted and innovative space.
             </p> <br />
-            <button className="font-gloria flex items-center justify-center gap-1 bg-yellow-500 text-white text-sm md:text-2xl lg:text-3xl p-3 rounded-md">
+            <button onClick={() => router.push(`https://phaserxrp.xyz`)} className="font-gloria flex items-center justify-center gap-1 bg-yellow-500 text-white text-sm md:text-2xl lg:text-3xl p-3 rounded-md">
               See $Phaser Beary <FaChevronRight/>
             </button>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
         <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">Top Artworks</h1>
         <p className="text-xs md:text-sm text-red-500 text-justify">
           <strong>Disclaimer: </strong>
-          This website is currently under development. All images featured in the Artwork and Gallery sections are sourced from Pinterest and are used for demonstration purposes only.
+          This website is currently under development. All images featured in the Top Artwork and Gallery sections are sourced from Pinterest and are used for demonstration purposes only.
         </p>
         <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-3 gap-4 space-y-4">
             {images.map((image, index) => (
