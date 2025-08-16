@@ -12,24 +12,20 @@ interface User {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [open, setOpen] = useState(false)
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://api.phaserbeary.xyz/api/user', { credentials: 'include' })
       .then(res => res.json())
-      .then(data => {
-        setUser(data.user)
-        setLoading(false)
-      })
-  }, [])
+      .then(data => setUser(data.user))
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false));
+  }, []);
 
   const handleLogin = () => {
-    window.location.href = 'https://api.phaserbeary.xyz/auth/twitter'
+    window.location.href = 'https://api.phaserbeary.xyz/auth/twitter';
   }
-
-  if (loading) return null
 
   return (
     <nav className="fixed text-black top-0 left-0 w-screen md:w-full bg-white shadow-md z-50">
@@ -42,17 +38,11 @@ export default function Navbar() {
           <div className="hidden md:flex gap-5 md:gap-6 lg:gap-10 text-md lg:text-2xl font-semibold items-center">
             <Link href="/" className="hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="hover:text-yellow-700 transition">About</Link>
-            {user ? (
-              <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>
-            ) : (
-              null
-            )}
+            {user && <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>}
             <Link href="/gallery" className="hover:text-yellow-700 transition">Gallery</Link>
             <Link href="/faq" className="hover:text-yellow-700 transition">FAQ</Link>
             {user ? (
-              <div className="">
-                <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
-              </div>
+              <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
             ) : (
               <button
                 onClick={handleLogin}
@@ -80,13 +70,11 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-4 text-lg font-medium">
             <Link href="/" className="block hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="block hover:text-yellow-700 transition">About</Link>
-            <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>
+            {user && <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>}
             <Link href="/gallery" className="block hover:text-yellow-700 transition">Gallery</Link>
             <Link href="/faq" className="block hover:text-yellow-700 transition">FAQ</Link>
             {user ? (
-              <div className="">
-                <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
-              </div>
+              <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
             ) : (
               <button
                 onClick={handleLogin}
