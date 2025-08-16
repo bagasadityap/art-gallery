@@ -14,7 +14,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false)
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch('https://api.phaserbeary.xyz/api/user', { credentials: 'include' })
