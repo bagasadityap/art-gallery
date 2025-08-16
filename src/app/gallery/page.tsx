@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import RevealOnScroll from "../../../components/reveal-on-scroll";
+import SubmitArt from "../../../components/submit-art";
 
 export default function ArtGallery() {
   const router = useRouter();
@@ -46,7 +47,8 @@ export default function ArtGallery() {
             </div>
           </div>
         </form>
-        <button type="button" className="hidden md:block bg-yellow-500 text-white text-sm md:text-xl hover:bg-yellow-800 hover:scale-105 font-bold py-1 px-2 md:py-2 md:px-3 rounded-lg">Submit your Art</button>
+        <SubmitArt/>
+        {/* <button type="button" className="hidden md:block bg-yellow-500 text-white text-sm md:text-xl hover:bg-yellow-800 hover:scale-105 font-bold py-1 px-2 md:py-2 md:px-3 rounded-lg">Submit your Art</button> */}
       </div>
       <div className="w-full flex flex-col items-center">
         <p className="text-xs md:text-sm text-red-500 text-justify mb-5 md:mb-10">
