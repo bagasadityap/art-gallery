@@ -12,7 +12,7 @@ export default function FAQPage() {
     {
       question: "How can I submit my artwork?",
       answer:
-        "You can submit your artwork through the 'Submit Your Art' button on the Gallery page. Every submission will be carefully curated and reviewed by our team before it is displayed in the gallery."
+        "You can submit your artwork by logging in and visiting your 'My Art' page. There, you will find the 'Submit Your Art' button to proceed. Every submission will be carefully curated and reviewed by our team before it is displayed in the gallery."
     },
     {
       question: "Are all artworks protected by copyright?",

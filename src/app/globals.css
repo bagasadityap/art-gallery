@@ -3,10 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-[data-nextjs-dev-overlay] {
-  display: none !important;
-}
-
 :root {
   --font-sora: 'Sora', sans-serif;
   --font-inter: 'Inter', sans-serif;

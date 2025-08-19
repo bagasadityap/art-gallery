@@ -2,30 +2,40 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface User {
-  twitter_username: string;
+  username: string;
   profile_picture: string;
 }
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    fetch('https://api.phaserbeary.xyz/api/user', { credentials: 'include' })
-      .then(res => res.json())
-      .then(data => setUser(data.user))
-      .catch(() => setUser(null))
-      .finally(() => setLoading(false));
+    const token = localStorage.getItem("jwt_token");
+    if (token) {
+      fetch("https://api.phaserbeary.xyz/api/user", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.user) setUser(data.user);
+        })
+        .catch(() => setUser(null));
+    }
   }, []);
 
-  const handleLogin = () => {
-    window.location.href = 'https://api.phaserbeary.xyz/auth/twitter';
-  }
+  const handleLogout = () => {
+    localStorage.removeItem("jwt_token");
+    setUser(null);
+    router.push("/");
+  };
 
   return (
     <nav className="fixed text-black top-0 left-0 w-screen md:w-full bg-white shadow-md z-50">
@@ -38,18 +48,28 @@ export default function Navbar() {
           <div className="hidden md:flex gap-5 md:gap-6 lg:gap-10 text-md lg:text-2xl font-semibold items-center">
             <Link href="/" className="hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="hover:text-yellow-700 transition">About</Link>
-            {user && <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>}
+            {user && (
+              <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>
+            )}
             <Link href="/gallery" className="hover:text-yellow-700 transition">Gallery</Link>
             <Link href="/faq" className="hover:text-yellow-700 transition">FAQ</Link>
+
             {user ? (
-              <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
+              <div className="flex items-center gap-2">
+                <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
+                <button
+                  onClick={handleLogout}
+                  className="bg-black text-white px-3 py-1 rounded-md hover:bg-yellow-700 transition"
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <button
-                onClick={handleLogin}
+                onClick={() => router.push(`/auth/login`)}
                 className="flex flex-row items-center gap-2 bg-black text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition"
               >
                 Login
-                <FaXTwitter />
               </button>
             )}
           </div>
@@ -70,18 +90,28 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-4 text-lg font-medium">
             <Link href="/" className="block hover:text-yellow-700 transition">Home</Link>
             <Link href="#about" className="block hover:text-yellow-700 transition">About</Link>
-            {user && <Link href="/my-art" className="hover:text-yellow-700 transition">My Art</Link>}
+            {user && (
+              <Link href="/my-art" className="hover:text-yellow-700 transition mb-4">My Art</Link>
+            )}
             <Link href="/gallery" className="block hover:text-yellow-700 transition">Gallery</Link>
             <Link href="/faq" className="block hover:text-yellow-700 transition">FAQ</Link>
+
             {user ? (
-              <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
+              <div className="flex items-center gap-2">
+                <img src={user.profile_picture} alt="Profile" className="w-10 h-10 rounded-full"/>
+                <button
+                  onClick={handleLogout}
+                  className="bg-black text-white px-3 py-1 rounded-md hover:bg-yellow-700 transition"
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <button
-                onClick={handleLogin}
+                onClick={() => router.push(`/auth/login`)}
                 className="flex flex-row items-center gap-2 bg-black text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition"
               >
                 Login
-                <FaXTwitter />
               </button>
             )}
           </div>

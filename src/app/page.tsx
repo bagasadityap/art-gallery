@@ -40,9 +40,9 @@ export default function Home() {
                 $Phaser <br /> Art Gallery
               </h1>
               <p className="text-black text-xs md:text-sm lg:text-md  mb-2 md:mb-10">Powered by $Phaser Beary</p>
-              <button className="flex bg-yellow-500 text-white text-xl md:text-xl lg:text-3xl p-3 rounded-md">
+              <a href="/gallery" className="flex bg-yellow-500 text-white text-xl md:text-xl lg:text-3xl p-3 rounded-md">
                 All Collections
-              </button>
+              </a>
             </div>
           </RevealOnScroll>
         </div>
@@ -56,16 +56,6 @@ export default function Home() {
             />
           </RevealOnScroll>
         </div>
-        {/* <div className="block md:hidden w-full h-auto md:h-full md:w-auto md:max-w-[35%] flex items-end">
-          <RevealOnScroll direction="up" delay={300}>
-            <Image
-              width={100}
-              height={100}
-              src="/assets/beary/2.PNG" alt=""
-              className="h-full w-auto object-cover"
-            />
-          </RevealOnScroll>
-        </div> */}
       </main>
     </RevealOnScroll>
 
